@@ -1,6 +1,6 @@
 {
   "name": "bluerpc",
-  "version": "1.0.0",
+  "version": "1.0.0-1",
   "description": "BlueRPC is a simple and high performance JSON-RPC 2.0 library.",
   "main": "index.js",
   "scripts": {
@@ -19,8 +19,6 @@
   "dependencies": {
     "arrify": "^1.0.1",
     "deep-assign": "^2.0.0",
-    "express": "^4.15.4",
-    "express-ws": "^3.0.0",
     "isobject": "^3.0.1",
     "pretty-format": "^20.0.3",
     "uuid": "^3.1.0",
