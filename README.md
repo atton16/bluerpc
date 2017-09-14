@@ -9,7 +9,7 @@ The library **supports TCP, HTTP and WebSocket** protocols. The exception is tha
 
 Following is the compatibility table.
 
-| Library           |  TCP  | HTP | WebSocket |
+| Library           |  TCP  | HTTP| WebSocket |
 | ----------------- |:-----:|:---:|:---------:|
 | Client            |   Y   |  Y  |     Y     |
 | Server            |   Y   |  Y  |     Y     |
