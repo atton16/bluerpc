@@ -34,3 +34,12 @@ The examples can be found inside examples folder.
 
 ## Contribution
 As the core functionality is completed. Now is the time for testing and writing documentation. You are more than welcome to help make this project more complete.
+
+## Donation
+If you like my work please help donate.
+- PayPal: [https://paypal.me/AttawitK](https://paypal.me/AttawitK)
+- Bitcoin: 1FN1hPzz1Z9tZwSDrHLeb57JGb4rJ1NviB
+
+Your donation is much appreciated.
+
+Thank you.
