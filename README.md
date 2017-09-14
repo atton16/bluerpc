@@ -19,7 +19,7 @@ Following is the compatibility table.
 The examples can be found inside examples folder.
 
 ## Development
-##### Implemented
+##### Completed
 - Basic functionality
 ##### Under development
 - Unit test
