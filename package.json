@@ -2,7 +2,7 @@
   "name": "bluerpc",
   "version": "1.0.0",
   "description": "BlueRPC is a simple and high performance JSON-RPC 2.0 library.",
-  "main": "lib/index.js",
+  "main": "index.js",
   "scripts": {
     "test": "jasmine --config=jasmine.json",
     "build": "babel src --out-dir lib"
