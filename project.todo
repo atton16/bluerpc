@@ -1,0 +1,44 @@
+Features:
+ - JSON-RPC 1.0 "serialization" 
+   (but without the "peer-to-peer-architecture", the transport-specific definitions of JSON-RPC 1.0 and class-hinting)
+ - JSON-RPC 2.0 requests, notifications, responses and errors
+   (but the proxy currently does not generate notifications)
+
+Server:
+  ✔ TCP @done (17-09-04 17:47)
+  ✔ HTTP @done (17-09-04 17:47)
+  ✔ WS @done (17-09-04 17:47)
+  - Middleware
+    ✔ HTTP @done (17-09-06 21:44)
+    ✔ WS @done (17-09-06 21:44)
+
+Client:
+  ✔ TCP @done (17-09-06 21:44)
+  ✔ HTTP @done (17-09-06 21:44)
+  ✔ WS @done (17-09-06 21:44)
+
+Unit Test:
+  Server:
+    ☐ TCP
+    ☐ HTTP
+    ☐ WS
+    - Middleware
+      ☐ HTTP
+      ☐ WS
+  Client:
+    ☐ TCP
+    ☐ HTTP
+    ☐ WS
+
+Stress Test:
+  Server:
+    ☐ TCP
+    ☐ HTTP
+    ☐ WS
+    - Middleware
+      ☐ HTTP
+      ☐ WS
+  Client:
+    ☐ TCP
+    ☐ HTTP
+    ☐ WS
