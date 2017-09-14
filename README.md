@@ -23,6 +23,7 @@ The examples can be found inside examples folder.
 - Basic functionality
 ##### Under development
 - Unit test
+- Examples
 ##### Planned
 - Load test
 - Documentation
