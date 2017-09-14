@@ -1,14 +1,14 @@
 {
   "name": "bluerpc",
   "version": "1.0.0",
-  "description": "",
+  "description": "BlueRPC is a simple and high performance JSON-RPC 2.0 library.",
   "main": "lib/index.js",
   "scripts": {
     "test": "jasmine --config=jasmine.json",
     "build": "babel src --out-dir lib"
   },
   "author": "Attawit Kittikrairit",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "babel-preset-es2015": "^6.24.1",
     "eslint": "^4.5.0",
