@@ -8,6 +8,7 @@ The package consists of both **client** and **server** library. Additionally, th
 The library **supports TCP, HTTP and WebSocket** protocols. The exception is that it **DOES NOT natively support HTTPS and WebSockets**. You have to use reverse proxy server to wrap the communication in the secure layer.
 
 Following is the compatibility table.
+
 | Library           |  TCP  | HTP | WebSocket |
 | ----------------- |:-----:|:---:|:---------:|
 | Client            |   Y   |  Y  |     Y     |
