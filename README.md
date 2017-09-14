@@ -29,7 +29,7 @@ The examples can be found inside examples folder.
 
 ## Inspiration
 - [Jayson](https://github.com/tedeh/jayson): a simple but featureful JSON-RPC 2.0/1.0 client and server for node.js
-- Uber's [Multitransport JSON-RPC]((https://github.com/uber/multitransport-jsonrpc)) Client and Server
+- Uber's [Multitransport JSON-RPC](https://github.com/uber/multitransport-jsonrpc) Client and Server
 
 ## Contribution
 As the core functionality is completed. Now is the time for testing and writing documentation. You are more than welcome to help make this project more complete.
