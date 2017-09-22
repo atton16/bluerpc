@@ -4,6 +4,13 @@ BlueRPC is a **simple** and **high performance** JSON-RPC 2.0 library written in
 ## The Package
 The package consists of both **client** and **server** library. Additionally, the server can also be run as **Express/Connect** middleware.
 
+## Achieving Highest Performance
+BlueRPC uses single connection per client regardless of the underlying communication protocols. This result in much lower packet counts since only one handshake is required per client. We can see its benefit clearly in a high frequency server-to-server communication such as "Authentication via microservice" where thousands of requests per second is generated simultaneously.
+
+## Drawback
+Since only one connection is used per client. The server have to reserve some memory to keep the connection state.
+It could potentially consume a lot of memory on the server in the scenario where there are a lot of clients connected to it.
+
 ## Underlying Protocols
 The library **supports TCP, HTTP and WebSocket** protocols. The exception is that it **DOES NOT natively support HTTPS and WebSockets**. You have to use reverse proxy server to wrap the communication in the secure layer.
 
