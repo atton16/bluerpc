@@ -28,9 +28,9 @@ The examples can be found inside examples folder.
 ## Development
 ##### Completed
 - Basic functionality
+- Examples
 ##### Under development
 - Unit test
-- Examples
 ##### Planned
 - Load test
 - Documentation

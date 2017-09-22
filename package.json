@@ -9,6 +9,11 @@
   },
   "author": "Attawit Kittikrairit",
   "homepage": "https://github.com/atton16/bluerpc",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/atton16/bluerpc.git"
+  },
+  "bugs": "https://github.com/atton16/bluerpc/issues",
   "license": "MIT",
   "devDependencies": {
     "babel-preset-es2015": "^6.24.1",
