@@ -20,7 +20,7 @@ class JSONRPCServer {
   /**
    * Start the server
    * @param  {object}   options   Listening options object containing port and host.
-   *                                default: {port: '3000', host: '0.0.0.0'}
+   *                                default: {port: '8889', host: '0.0.0.0'}
    * @param  {Function} callback  Callback function when server is binded.
    */
   listen(options, callback) {
@@ -32,7 +32,7 @@ class JSONRPCServer {
     if (typeof callback !== 'function')
       throw new Error('callback is not a function.');
     const _options = {};
-    _options.port = options.port ? options.port : '3000';
+    _options.port = options.port ? options.port : '8889';
     _options.host = options.host ? options.host : '0.0.0.0';
     this._listenOptions = _options;
     return {options: options, callback: callback};

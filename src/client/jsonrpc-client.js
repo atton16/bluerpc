@@ -10,7 +10,7 @@ class JSONRPCClient {
     this._options = {
       keepAlive: (optionsIsObj && options.keepAlive === false) ? false : true,
       host: (optionsIsObj && options.host) ? options.host : '127.0.0.1',
-      port: (optionsIsObj && options.port) ? options.port : '7070',
+      port: (optionsIsObj && options.port) ? options.port : '8889',
       path: (optionsIsObj && options.path) ? options.path : '/',
     };
     this._jsonRPC = JSONRPCFactory.v2();
