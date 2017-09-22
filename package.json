@@ -8,6 +8,7 @@
     "build": "babel src --out-dir lib"
   },
   "author": "Attawit Kittikrairit",
+  "homepage": "https://github.com/atton16/bluerpc",
   "license": "MIT",
   "devDependencies": {
     "babel-preset-es2015": "^6.24.1",
