@@ -27,15 +27,26 @@ class JSONRPCServer {
     if(this._options.middlewareOnly)
       throw new Error('This method is prohibited when using middlewareOnly option.');
 
-    if (!isObject(options))
+    if (options && !isObject(options))
       throw new Error('options must be an object.');
-    if (typeof callback !== 'function')
+    if (callback && typeof callback !== 'function')
       throw new Error('callback is not a function.');
     const _options = {};
+    if (!options) options = {};
     _options.port = options.port ? options.port : '8889';
     _options.host = options.host ? options.host : '0.0.0.0';
     this._listenOptions = _options;
-    return {options: options, callback: callback};
+    return {options: _options, callback: callback};
+  }
+  
+  /**
+   * Stop the server
+   * @param  {Function} callback  Callback function when server is binded.
+   */
+  close(callback) {
+    if(this._options.middlewareOnly)
+      throw new Error('This method is prohibited when using middlewareOnly option.');
+
   }
 
   /**

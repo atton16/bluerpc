@@ -21,6 +21,8 @@ class JSONRPCClient {
     this._base = this;
   }
 
+  destroy() {}
+
   request(method, params, callback, id) {
     this._write(this._requestStr(method, params, callback, id));
   }

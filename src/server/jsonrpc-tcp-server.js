@@ -17,6 +17,11 @@ class JSONRPCTCPServer extends JSONRPCServer {
     this._server.listen(this._listenOptions, callback);
   }
 
+  close(callback) {
+    super.close(callback);
+    this._server.close(callback);
+  }
+
   _write(handler, dataStr) {
     handler.write(dataStr);
     if(this._options.keepAlive === false)

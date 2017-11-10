@@ -37,6 +37,11 @@ class JSONRPCHTTPServer extends JSONRPCServer {
     super.listen(options, callback);
     this._server.listen(this._listenOptions, callback);
   }
+  
+  close(callback) {
+    super.close(callback);
+    this._server.close(callback);
+  }
 
   _write(handler, dataStr) {
     handler.res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });

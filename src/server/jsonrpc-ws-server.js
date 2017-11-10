@@ -46,6 +46,11 @@ class JSONRPCWSServer extends JSONRPCHTTPServer {
       superMw(arg1, arg2, next);
     }).bind(this);
   }
+  
+  close(callback) {
+    super.close(callback);
+    this._server.close(callback);
+  }
 
 }
 

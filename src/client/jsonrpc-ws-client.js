@@ -10,6 +10,11 @@ class JSONRPCWSClient extends JSONRPCClient {
     ws.on('close', (() => this._handleOnEnd(ws)).bind(this));
     this._client = ws;
   }
+  
+  destroy() {
+    super.destroy();
+    this._client.close();
+  }
 
   _write(data) {
     this._client.send(data);

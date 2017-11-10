@@ -16,6 +16,11 @@ class JSONRPCTCPClient extends JSONRPCClient {
     this._client = client;
   }
 
+  destroy() {
+    super.destroy();
+    this._client.end();
+  }
+
   _write(data) {
     this._client.write(data);
   }

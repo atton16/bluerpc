@@ -20,6 +20,11 @@ class JSONRPCHTTPClient extends JSONRPCClient {
       }),
     };
   }
+  
+  destroy() {
+    super.destroy();
+    this._reqOptions.agent.destroy();
+  }
 
   _write(data) {
     const options = deepAssign({}, this._reqOptions);
