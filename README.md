@@ -1,6 +1,19 @@
 # BlueRPC
 BlueRPC is a **simple** and **high performance** JSON-RPC 2.0 library written in JavaScript for Node.js.
 
+## Test Status
+
+** NOTE: Even though the test is failed. It just mean that I am not finish writing tests yet.
+
+** The **examples**, however, should be **working** fine.
+|    Type   |    Result   |
+| --------- |:-----------:|
+| TCP       |  **Pass**   |
+| HTTP      |    Failed   |
+| WS        |  **Pass**   |
+| HTTP (MW) |  ***N/A***  |
+| WS (MW)   |  ***N/A***  |
+
 ## The Package
 The package consists of both **client** and **server** library. Additionally, the server can also be run as **Express/Connect** middleware.
 
