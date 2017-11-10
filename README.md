@@ -1,4 +1,4 @@
-# BlueRPC
+# BlueRPC [![Build Status](https://travis-ci.org/atton16/bluerpc.svg?branch=master)](https://travis-ci.org/atton16/bluerpc)
 BlueRPC is a **simple** and **high performance** JSON-RPC 2.0 library written in JavaScript for Node.js.
 
 ## Test Status
