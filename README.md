@@ -6,6 +6,7 @@ BlueRPC is a **simple** and **high performance** JSON-RPC 2.0 library written in
 ** NOTE: Even though the test is failed. It just mean that I am not finish writing tests yet.
 
 ** The **examples**, however, should be **working** fine.
+
 |    Type   |    Result   |
 | --------- |:-----------:|
 | TCP       |  **Pass**   |
