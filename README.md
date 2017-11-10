@@ -7,13 +7,15 @@ BlueRPC is a **simple** and **high performance** JSON-RPC 2.0 library written in
 
 ** The **examples**, however, should be **working** fine.
 
-|    Type   |    Result   |
-| --------- |:-----------:|
-| TCP       |  **Pass**   |
-| HTTP      |    Failed   |
-| WS        |  **Pass**   |
-| HTTP (MW) |    *N/A*    |
-| WS (MW)   |    *N/A*    |
+|       Type        |     Result    |
+| ----------------- |:-------------:|
+| TCP               |   **Passed**  |
+| HTTP              |     Failed    |
+| WS                |   **Passed**  |
+| HTTP (MW)         |     *N/A*     |
+| HTTP (MW, Custom) |     *N/A*     |
+| WS (MW)           |   **Passed**  |
+| WS (MW, Custom)   |   **Passed**  |
 
 ## The Package
 The package consists of both **client** and **server** library. Additionally, the server can also be run as **Express/Connect** middleware.
@@ -35,6 +37,9 @@ Following is the compatibility table.
 | Client            |   Y   |  Y  |     Y     |
 | Server            |   Y   |  Y  |     Y     |
 | Middleware Server |***N***|  Y  |     Y     |
+
+## Recommendations
+To achieve the highest customizability and control, I recommend you to use WebSocket as the medium and use the server as the middleware under express/connect server.
 
 ## Examples
 The examples can be found inside examples folder.

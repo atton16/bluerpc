@@ -1,10 +1,11 @@
 const async = require('async');
+const express = require('express');
 
-module.exports = (Server, Client) => {
+module.exports = (Server, Client, option) => {
   return () => {
-    let server, client, client2, state;
-    
-    beforeEach((done) => {
+    let server, client, client2, state, expressApp, expressWs, httpServer;
+
+    function initServer(done) {
       state = {
         server: {
           clients: 0,
@@ -13,11 +14,9 @@ module.exports = (Server, Client) => {
       };
       server = new Server();
       server.on('connect', () => {
-        console.log('server: client connected');
         state.server.clients++;
       });
       server.on('close', () => {
-        console.log('server: client disconnected');
         state.server.clients--;
       });
       server.register('echo', (params) => {
@@ -42,6 +41,75 @@ module.exports = (Server, Client) => {
           },
         ], (err, results) => done());
       });
+    }
+
+    function initMw(done, option) {
+      state = {
+        server: {
+          clients: 0,
+          store: [],
+        },
+      };
+      server = new Server({ middlewareOnly: true });
+      server.register('echo', (params) => {
+        return params[0];
+      });
+      server.register('save', (params) => {
+        state.server.store.push(params[0]);
+      });
+
+      expressApp = express();
+      if (option === 'mw-custom') {
+        const http = require('http');
+        httpServer = http.createServer(expressApp);
+        expressWs = require('express-ws')(expressApp, httpServer);
+      } else {
+        expressWs = require('express-ws')(expressApp);
+      }
+
+      expressApp.ws('/json-rpc', server.middleware());
+
+      expressWs.getWss().on('connection', function(socket){
+        state.server.clients++;
+        socket.on('close', function(){
+          state.server.clients--;
+        });
+      });
+
+      function listenCallback () {
+        client = new Client({
+          path: '/json-rpc',
+        });
+        client2 = new Client({
+          path: '/json-rpc',
+        });
+        async.parallel([
+          (cb) => {
+            client.on('connect', () => {
+              cb(null, null);
+            });
+          },
+          (cb) => {
+            client2.on('connect', () => {
+              cb(null, null);
+            });
+          },
+        ], (err, results) => done());
+      }
+
+      if (option === 'mw-custom') {
+        httpServer.listen(8889, listenCallback);
+      } else {
+        httpServer = expressApp.listen(8889, listenCallback);
+      }
+    }
+    
+    beforeEach((done) => {
+      if(option === 'mw' || option === 'mw-custom') {
+        initMw(done);
+      } else {
+        initServer(done);
+      }
     });
   
     afterEach((done) => {
@@ -49,7 +117,11 @@ module.exports = (Server, Client) => {
       client2.destroy();
       server.deRegister('echo');
       server.deRegister('save');
-      server.close(done);
+      if(option === 'mw' || option === 'mw-custom') {
+        httpServer.close(done);
+      } else {
+        server.close(done);
+      }
     });
   
     describe('Request', () => {
